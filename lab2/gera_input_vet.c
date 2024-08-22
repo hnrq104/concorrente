@@ -15,7 +15,6 @@ int main(int argc, char*argv[]) {
     long int n; //qtde de elementos do vetor que serao gerados
     double prod_interno=0; //soma total dos elementos gerados
     FILE * descritorArquivo; //descritor do arquivo de saida
-    size_t ret; //retorno da funcao de escrita no arquivo de saida
 
     //recebe os argumentos de entrada
     if(argc < 3) {
@@ -69,23 +68,25 @@ int main(int argc, char*argv[]) {
         return 3;
     }
     //escreve a dimensao
-    ret = fwrite(&n, sizeof(long int), 1, descritorArquivo);
+    
+    
+    if(fwrite(&n, sizeof(long int), 1, descritorArquivo) < 1){
+        fprintf(stderr,"Erro de escrita no arquivo\n");
+    }
     //escreve os elementos do vetor
-    ret = fwrite(vetor_u, sizeof(float), n, descritorArquivo);
-    if(ret < n) {
+    if(fwrite(vetor_u, sizeof(float), n, descritorArquivo) < (size_t) n){
         fprintf(stderr, "Erro de escrita no  arquivo\n");
         return 4;
     }
     
-    ret = fwrite(vetor_v, sizeof(float), n, descritorArquivo);
-    if(ret < n) {
+    
+    if(fwrite(vetor_v, sizeof(float), n, descritorArquivo) < (size_t) n) {
         fprintf(stderr, "Erro de escrita no  arquivo\n");
         return 4;
     }
 
     //escreve o somatorio
-    ret = fwrite(&prod_interno, sizeof(double), 1, descritorArquivo);
-    if(ret < 1) {
+    if(fwrite(&prod_interno, sizeof(double), 1, descritorArquivo) < 1){
         fprintf(stderr, "Erro de escrita no  arquivo\n");
         return 4;
     }

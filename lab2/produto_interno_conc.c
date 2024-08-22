@@ -35,12 +35,12 @@ void *Produto(void* args_thread){
         prod_parcial += arg->u[init + i] * arg->v[init + i];
     }
     
-    free(args_thread);
     t_ret* r = malloc(sizeof(t_ret));
     if(r == NULL){
         fprintf(stderr,"--ERRO: malloc() para retorno da thread %d\n",arg->id);
     } else r->prod = prod_parcial;
-
+    
+    free(args_thread);
     pthread_exit((void*) r);
 }
 
@@ -79,12 +79,12 @@ int main(int argc, char* argv[]){
     }
 
     //tenta ler o primeiro vetor
-    if(fread(u,sizeof(float),n,arq) < n){
+    if(fread(u,sizeof(float),n,arq) < (size_t) n){
         fprintf(stderr,"--ERRO: fread() para vetor u\n");
         return 2;
     }
     //tenta ler o segundo vetor
-    if(fread(v,sizeof(float),n,arq) < n){
+    if(fread(v,sizeof(float),n,arq) < (size_t) n){
         fprintf(stderr,"--ERRO: fread() para vetor u\n");
         return 2;
     }
@@ -95,11 +95,11 @@ int main(int argc, char* argv[]){
         fprintf(stderr,"--ERRO: fread() para prod_interno no arq\n");
     }
 
-    for(int i = 0; i < num_threads; i++){
+    for(size_t i = 0; i < num_threads; i++){
         //aloca argumentos para thread
         t_arg* arg_thread = malloc(sizeof(t_arg));
         if(arg_thread == NULL){
-            fprintf(stderr,"--ERRO: malloc() args para thread %d\n",i);
+            fprintf(stderr,"--ERRO: malloc() args para thread %ld\n",i);
             exit(1);
         }
         arg_thread->id = i;
@@ -108,24 +108,24 @@ int main(int argc, char* argv[]){
         arg_thread->u = u;
         arg_thread->v = v;
         if(pthread_create(&tids[i], NULL, Produto, (void*) arg_thread)){
-            fprintf(stderr,"--ERRO: pthread_create() na thread %d\n",i);
+            fprintf(stderr,"--ERRO: pthread_create() na thread %ld\n",i);
         }
     }
 
     double prod_conc = 0;
     double prod_seq = 0;
     //calcula o prod_concorrente a partir dos retornos
-    for(int i = 0; i < num_threads; i++){
+    for(size_t i = 0; i < num_threads; i++){
         t_ret *r = NULL;
         if(pthread_join(tids[i],(void*) &r)){
-            fprintf(stderr,"--ERRO: pthread_join() da thread %d\n",i);
+            fprintf(stderr,"--ERRO: pthread_join() da thread %ld\n",i);
         }
         prod_conc += r->prod;
         free(r);
     }
 
     //calcula o prod_sequencial
-    for(long int i = 0; i < n; i++){
+    for(long i = 0; i < n; i++){
         prod_seq += u[i]*v[i];
     }
 
