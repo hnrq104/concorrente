@@ -11,18 +11,6 @@ typedef struct{
     float* m;
 }mat;
 
-// typedef struct{
-//     int num_threads, id_thread;
-//     mat A,B,C;
-// }t_arg;
-
-
-// typedef struct{
-//     int l,c;
-//     float* linhas;
-//     float* colunas;
-// }mat_seq; //duplica linhas e colunas para manter sequencialidade
-
 void Multiplica(mat A, mat B, mat *C){
     int l = A.linhas;
     int c = B.colunas;
@@ -36,6 +24,27 @@ void Multiplica(mat A, mat B, mat *C){
                 C->m[i*c + j] += A.m[i*tam + k]*B.m[k*c + j];
             }
         }
+    }
+}
+
+void Multiplica_Guardando(mat A, mat B, mat *C){
+    int l = A.linhas;
+    int c = B.colunas;
+    int tam = A.colunas; // = B.linhas
+    C->linhas = l;
+    C->colunas = c;
+    for(int j = 0; j < c; j++){
+        float* B_coluna = malloc(sizeof(float)*tam);
+        for(int k = 0; k < tam; k++){
+            B_coluna[k] = B.m[k*c + j];
+        }
+        for(int i = 0; i < l; i++){
+            C->m[i*c + j] = 0;
+            for(int k = 0; k < tam; k++){
+                C->m[i*c + j] += A.m[i*tam + k]*B_coluna[k];
+            }
+        }
+        free(B_coluna);
     }
 }
 

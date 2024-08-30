@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
-#include <time.h>
+#include <sys/time.h>
 
 typedef struct{
     int linhas,colunas;
@@ -52,6 +52,7 @@ void *Multiplica_Thread_Guardando(void* v_arg){
                 C->m[i*c + j] += A.m[i*tam + k] * coluna_B[k];
             }
         }
+        free(coluna_B);
     }
     // printf("thread %d acabou\n",arg->id_thread);
     free(arg);
@@ -81,7 +82,8 @@ void *Multiplica_Thread(void* v_arg){
 
 
 int main(int argc, char* argv[]){
-    clock_t init = clock();
+    struct timeval start,finish;
+    gettimeofday(&start,0);
     //s arq1 arq2 arqsaida
     if(argc < 5){
         printf("Uso: %s <arq-matriz-entrada> <arq-matriz-entrada> <arq-saida> <n-threads>\n",argv[0]);
@@ -90,7 +92,6 @@ int main(int argc, char* argv[]){
 
     FILE* arq_mat_1 = fopen(argv[1],"rb");
     FILE* arq_mat_2 = fopen(argv[2],"rb");
-
     FILE* files[2] = {arq_mat_1,arq_mat_2};
     mat input[2];
 
@@ -117,11 +118,12 @@ int main(int argc, char* argv[]){
 
     int num_threads = atoi(argv[4]);
     pthread_t *tids = malloc(sizeof(pthread_t) * num_threads);
-    
-    init = clock() - init;
-    printf("tempo para inicializar: %lf\n",(double)init /CLOCKS_PER_SEC);
 
-    clock_t process = clock();
+    //aqui a gente finaliza a contagem de tempo da inicialização
+    gettimeofday(&finish,0);
+    double elapsed_init = finish.tv_sec - start.tv_sec + (finish.tv_usec - start.tv_usec)*1e-6;
+
+    gettimeofday(&start,0);
     for(int i = 0; i < num_threads; i++){
         t_arg *arg = thread_arg(num_threads,i,input[0],input[1],&saida);
         if(!arg){
@@ -138,20 +140,30 @@ int main(int argc, char* argv[]){
             fprintf(stderr,"erro: erro em pthread_join para %d\n",i);
         }
     }
+    //aqui finalizamos a contagem para a multiplicacao
+    gettimeofday(&finish,0);
+    double elapsed_processo = finish.tv_sec - start.tv_sec + (finish.tv_usec - start.tv_usec)*1e-6;
 
-    process = clock() - process;
-    printf("tempo para multiplicar: %lf\n",(double)process/CLOCKS_PER_SEC);
-
-    clock_t fin = clock();
+    
+    gettimeofday(&start,0);
     FILE* arq_saida = fopen(argv[3],"wb");
     fwrite(&saida.linhas,sizeof(int),1,arq_saida);
     fwrite(&saida.colunas,sizeof(int),1,arq_saida);
     fwrite(saida.m,sizeof(float), (size_t)saida.linhas*saida.colunas, arq_saida);
     fclose(arq_saida);
-    fin = clock() - fin;
-    printf("tempo para finalizar: %lf\n",(double)fin/CLOCKS_PER_SEC);
-    clock_t total = init + process + fin;
-    printf("tempo total do programa: %lf\n",(double)total/CLOCKS_PER_SEC);
+
+    free(input[0].m);
+    free(input[1].m);
+    free(saida.m);
+
+    gettimeofday(&finish,0);
+    double elapsed_finalizacao = finish.tv_sec - start.tv_sec + (finish.tv_usec - start.tv_usec)*1e-6;
+    double elapsed_total = elapsed_init + elapsed_processo + elapsed_finalizacao;
     
+    //printa os tempos! 
+    //Num de threads, dimensoes matrizes, total, init, mult, fim
+    printf("%d, %d, %lf, %lf, %lf, %lf\n",num_threads,saida.colunas, 
+        elapsed_total, elapsed_init,elapsed_processo, elapsed_finalizacao);
+
     return 0;
 }   
