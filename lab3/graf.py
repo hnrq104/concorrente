@@ -18,12 +18,14 @@ df = pd.read_csv(sys.argv[1])
 
 means = df.groupby(['Dimensao','NumThreads'])['TempoTotal'].mean().reset_index()
 dimensions = means['Dimensao'].unique()
+num_threads = means['NumThreads'].unique()
+
 print(dimensions)
 for d in dimensions:
     data = means[means['Dimensao'] == d].copy()
     plt.figure(figsize=(10,6))
     plt.plot(data['NumThreads'],data['TempoTotal'], marker='o',linestyle='-', label=f"Dimensao:{d}")
-    plt.xticks(data['NumThreads'])
+    plt.xticks(num_threads)
     plt.yticks(data['TempoTotal'])
     plt.title(f'Tempo Total por Num Threads (Dimensao: {d})')
     plt.xlabel('Num Threads')
@@ -35,38 +37,41 @@ for d in dimensions:
 
 #grafico de aceleracao
 plt.figure(figsize=(10,6))
-for d in dimensions:
+plt.title(f'Aceleração por Num Threads')
+plt.xticks(data['NumThreads'])
+Y_acc = []
+for i, d in enumerate(dimensions):
     data = means[means['Dimensao'] == d].copy()
     tseq = data.iloc[0]['TempoTotal']
     print(tseq)
     data['acceleration'] = tseq/data['TempoTotal']
-    data['efficiency'] = data['acceleration']/data['NumThreads']
+    if i%2 : Y_acc.extend(data['acceleration'])
     plt.plot(data['NumThreads'],data['acceleration'], marker='o',linestyle='-', label=f"Dimensao:{d}")
-    plt.xticks(data['NumThreads'])
-    plt.yticks(data['acceleration'])
-    plt.title(f'Aceleração por Num Threads (Dimensao: {d})')
-    plt.xlabel('Num Threads')
-    plt.ylabel('Aceleração')
-    plt.grid(True)
-    plt.legend()
+plt.yticks(Y_acc)
+plt.xlabel('Num Threads')
+plt.ylabel('Aceleração')
+plt.grid(True)
+plt.legend()
 plt.savefig(f'{sys.argv[2]}/aceleracao_dimensao.png',format='png')
 
 #grafico de eficiencia
 plt.figure(figsize=(10,6))
-for d in dimensions:    
+plt.title(f'Eficiência por Num Threads')
+plt.xticks(data['NumThreads'])
+Y_eff = []
+for i,d in enumerate(dimensions):    
     data = means[means['Dimensao'] == d].copy()
     tseq = data.iloc[0]['TempoTotal']
     print(tseq)
     data['acceleration'] = tseq/data['TempoTotal']
     data['efficiency'] = data['acceleration']/data['NumThreads']
+    if i%2: Y_eff.extend(data['efficiency'])
     plt.plot(data['NumThreads'],data['efficiency'], marker='o',linestyle='-', label=f"Dimensao:{d}")
-    plt.xticks(data['NumThreads'])
-    plt.yticks(data['efficiency'])
-    plt.title(f'Eficiência por Num Threads (Dimensao: {d})')
-    plt.xlabel('Num Threads')
-    plt.ylabel('Eficiências')
-    plt.grid(True)
-    plt.legend()
+plt.yticks(Y_eff)
+plt.xlabel('Num Threads')
+plt.ylabel('Eficiências')
+plt.grid(True)
+plt.legend()
 plt.savefig(f'{sys.argv[2]}/eficiencia_dimensao.png',format='png')
 
 ''' Nota para vida depois dos resultados, sempre... SEMPRE usar -O3'''
