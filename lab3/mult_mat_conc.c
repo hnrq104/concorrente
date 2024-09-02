@@ -1,7 +1,7 @@
 /* Disciplina: Computacao Concorrente */
 /* Aluno: Henrique */
 /* Lab3*/
-/* Codigo: Multiplica duas matrizes sequencialmente*/
+/* Codigo: Multiplica duas matrizes concorrentemente*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
