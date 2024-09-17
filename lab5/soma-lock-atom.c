@@ -12,7 +12,7 @@
 
 long int soma = 0; // variavel compartilhada entre as threads
 int printamos = 0; // booleana
-long int quem_somou = -1; // isso aqui é só um caviat para printar quem fez a ultima soma
+long int quem_somou = -1; // isso aqui é só um caveat para printar quem fez a ultima soma
 pthread_mutex_t mutex; // variavel de lock para exclusao mutua
 pthread_mutex_t mutex_print; // lock para condicao de printar
 pthread_cond_t cond_print; //condicao de printar 
