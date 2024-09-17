@@ -7,8 +7,8 @@
 #include <stdlib.h> 
 #include <pthread.h>
 
-#define MOD 1000 // É muito interessante testar com valores diferentes de MOD
-#define QTD_MULTIPLOS 200
+#define MOD 10 // É muito interessante testar com valores diferentes de MOD sugiro 1000!
+#define QTD_MULTIPLOS 20
 
 long int soma = 0; // variavel compartilhada entre as threads
 int printamos = 0; // booleana
