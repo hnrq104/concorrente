@@ -8,16 +8,18 @@
 
 #include "priority_rw.h" //minha prw
 
-#define QTDE_OPS 1000 //quantidade de operacoes sobre a lista (insercao, remocao, consulta)
+#define QTDE_OPS 1000000 //quantidade de operacoes sobre a lista (insercao, remocao, consulta)
 #define QTDE_INI 100 //quantidade de insercoes iniciais na lista
-#define MAX_VALUE 100 //valor maximo a ser inserido
+#define MAX_VALUE 1000000 //valor maximo a ser inserido
+
+//IMPORTANTE! MUDAR MAX_VALUE faz o que queremos!
 
 //lista compartilhada iniciada 
 struct list_node_s* head_p = NULL; 
 //qtde de threads no programa
 int nthreads;
 //lock de exclusao mutua
-pthread_mutex_t mutex;
+// pthread_mutex_t mutex;
 
 priority_rwlock prw;
 
@@ -92,7 +94,7 @@ int main(int argc, char* argv[]) {
     }
 
     //inicializa a variavel mutex
-    pthread_mutex_init(&mutex, NULL);
+    // pthread_mutex_init(&mutex, NULL);
 
     //incializa a minha prw
     priority_init(&prw);
@@ -119,7 +121,11 @@ int main(int argc, char* argv[]) {
     printf("Tempo: %lf\n", delta);
 
     //libera o mutex
-    pthread_mutex_destroy(&mutex);
+    // pthread_mutex_destroy(&mutex);
+
+    //libera o prw
+    priority_destroy(&prw);
+
     //libera o espaco de memoria do vetor de threads
     free(tid);
     //libera o espaco de memoria da lista

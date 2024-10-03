@@ -2,7 +2,7 @@
 
 all: objFolder atv3
 
-atv3: objects/priority_rw.o objects/list_int.o cods-lab6/timer.h
+atv3: objects/priority_rw.o atividade3.c objects/list_int.o cods-lab6/timer.h
 	gcc atividade3.c objects/priority_rw.o objects/list_int.o -Wall -Wextra -O3 -o atv3
 
 objFolder:
