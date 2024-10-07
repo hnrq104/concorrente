@@ -8,8 +8,8 @@
 
 #include "priority_rw.h" //minha prw
 
-#define QTDE_OPS 1000000 //quantidade de operacoes sobre a lista (insercao, remocao, consulta)
-#define QTDE_INI 100 //quantidade de insercoes iniciais na lista
+#define QTDE_OPS 1000 //quantidade de operacoes sobre a lista (insercao, remocao, consulta)
+#define QTDE_INI 1000 //quantidade de insercoes iniciais na lista
 #define MAX_VALUE 1000000 //valor maximo a ser inserido
 
 //IMPORTANTE! MUDAR MAX_VALUE faz o que queremos!
@@ -32,7 +32,7 @@ void* tarefa(void* arg) {
     srand(time(NULL));
     //realiza operacoes de consulta (98%), insercao (1%) e remocao (1%)
     for(long int i=id; i<QTDE_OPS; i+=nthreads) {
-        op = rand()%100; // só para o logging!
+        op = rand()%4; // só para o logging!
         if(op>1) {
             // pthread_mutex_lock(&mutex);
             

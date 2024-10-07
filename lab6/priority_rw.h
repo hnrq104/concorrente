@@ -3,7 +3,11 @@
 typedef struct {
     int num_writers_waiting; // how many writers waiting
     int num_readers; //how many readers are on at the moment
-    int num_writers; //should only be 0 or 1
+    
+    int num_readers_waiting; // a fim de logging
+    int num_writers; //variavel desnecessária!
+    
+    
     pthread_mutex_t m1; // mutex
     pthread_cond_t cond_writers; // wait queue for writers
     pthread_cond_t cond_readers; // wait queue for readers
