@@ -1,0 +1,271 @@
+prw: iniciando rwlock 0x55ab2dc95100
+prw thread 140378359027392: wlock blocked!: nr=1, nrw=0, nww=1
+prw thread 140378342241984: wlock blocked!: nr=1, nrw=0, nww=2
+prw thread 140378333849280: wlock blocked!: nr=1, nrw=0, nww=3
+prw thread 140378367420096: wlock blocked!: nr=1, nrw=0, nww=4
+prw thread 140378350634688: wlock blocked!: nr=1, nrw=0, nww=5
+prw thread 140378375812800: rlock blocked!: nr=1, nrw=1, nww=5
+prw thread 140378224809664: last reader!: nrw=1 nww=5, liberando somente writer!
+prw thread 140378224809664: rlock blocked!: nr=0, nrw=2, nww=5
+prw thread 140378359027392: wlock signaled!: nr=0, nrw=2, nww=5
+prw thread 140378359027392: wunlocking, signalling writers!: nr=0, nrw=2, nww=4
+prw thread 140378359027392: rlock blocked!: nr=0, nrw=3, nww=4
+prw thread 140378342241984: wlock signaled!: nr=0, nrw=3, nww=4
+prw thread 140378342241984: wunlocking, signalling writers!: nr=0, nrw=3, nww=3
+prw thread 140378342241984: wunlocking, signalling writers!: nr=0, nrw=3, nww=3
+prw thread 140378342241984: wunlocking, signalling writers!: nr=0, nrw=3, nww=3
+prw thread 140378342241984: wunlocking, signalling writers!: nr=0, nrw=3, nww=3
+prw thread 140378342241984: rlock blocked!: nr=0, nrw=4, nww=3
+prw thread 140378333849280: wlock signaled!: nr=0, nrw=4, nww=3
+prw thread 140378333849280: wunlocking, signalling writers!: nr=0, nrw=4, nww=2
+prw thread 140378333849280: rlock blocked!: nr=0, nrw=5, nww=2
+prw thread 140378350634688: wlock signaled!: nr=0, nrw=5, nww=2
+prw thread 140378350634688: wunlocking, signalling writers!: nr=0, nrw=5, nww=1
+prw thread 140378350634688: rlock blocked!: nr=0, nrw=6, nww=1
+prw thread 140378367420096: wlock signaled!: nr=0, nrw=6, nww=1
+prw thread 140378367420096: wunlocking, signalling readers!: nr=0, nrw=6, nww=0
+prw thread 140378367420096: wunlocking, signalling readers!: nr=0, nrw=6, nww=0
+prw thread 140378367420096: wunlocking, signalling readers!: nr=0, nrw=6, nww=0
+prw thread 140378367420096: wunlocking, signalling readers!: nr=0, nrw=6, nww=0
+prw thread 140378367420096: wlock blocked!: nr=1, nrw=5, nww=1
+prw thread 140378224809664: last reader!: nrw=5 nww=1, liberando somente writer!
+prw thread 140378224809664: rlock blocked!: nr=0, nrw=6, nww=1
+prw thread 140378375812800: rlock blocked!: nr=0, nrw=6, nww=1
+prw thread 140378333849280: rlock blocked!: nr=0, nrw=6, nww=1
+prw thread 140378350634688: rlock blocked!: nr=0, nrw=6, nww=1
+prw thread 140378367420096: wlock signaled!: nr=0, nrw=6, nww=1
+prw thread 140378367420096: wunlocking, signalling readers!: nr=0, nrw=6, nww=0
+prw thread 140378367420096: wunlocking, signalling readers!: nr=0, nrw=6, nww=0
+prw thread 140378367420096: wunlocking, signalling readers!: nr=0, nrw=6, nww=0
+prw thread 140378367420096: wunlocking, signalling readers!: nr=0, nrw=6, nww=0
+prw thread 140378367420096: wlock blocked!: nr=2, nrw=4, nww=1
+prw thread 140378350634688: rlock blocked!: nr=1, nrw=5, nww=1
+prw thread 140378375812800: last reader!: nrw=5 nww=1, liberando somente writer!
+prw thread 140378359027392: rlock blocked!: nr=0, nrw=5, nww=1
+prw thread 140378224809664: rlock blocked!: nr=0, nrw=5, nww=1
+prw thread 140378367420096: wlock signaled!: nr=0, nrw=5, nww=1
+prw thread 140378367420096: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378375812800: wlock blocked!: nr=2, nrw=4, nww=1
+prw thread 140378367420096: wlock blocked!: nr=1, nrw=4, nww=2
+prw thread 140378350634688: rlock blocked!: nr=1, nrw=4, nww=2
+prw thread 140378342241984: rlock blocked!: nr=1, nrw=4, nww=2
+prw thread 140378333849280: last reader!: nrw=4 nww=2, liberando somente writer!
+prw thread 140378333849280: rlock blocked!: nr=0, nrw=5, nww=2
+prw thread 140378359027392: rlock blocked!: nr=0, nrw=5, nww=2
+prw thread 140378367420096: wlock signaled!: nr=0, nrw=5, nww=2
+prw thread 140378367420096: wunlocking, signalling writers!: nr=0, nrw=5, nww=1
+prw thread 140378367420096: wunlocking, signalling writers!: nr=0, nrw=5, nww=1
+prw thread 140378367420096: wunlocking, signalling writers!: nr=0, nrw=5, nww=1
+prw thread 140378367420096: wunlocking, signalling writers!: nr=0, nrw=5, nww=1
+prw thread 140378367420096: rlock blocked!: nr=0, nrw=6, nww=1
+prw thread 140378224809664: rlock blocked!: nr=0, nrw=6, nww=1
+prw thread 140378375812800: wlock signaled!: nr=0, nrw=6, nww=1
+prw thread 140378375812800: wunlocking, signalling readers!: nr=0, nrw=6, nww=0
+Thread 0: in=21 out=13 read=31
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wlock blocked!: nr=2, nrw=3, nww=1
+prw thread 140378333849280: rlock blocked!: nr=1, nrw=4, nww=1
+prw thread 140378359027392: rlock blocked!: nr=1, nrw=4, nww=1
+prw thread 140378342241984: rlock blocked!: nr=1, nrw=4, nww=1
+prw thread 140378224809664: rlock blocked!: nr=1, nrw=4, nww=1
+prw thread 140378367420096: last reader!: nrw=4 nww=1, liberando somente writer!
+prw thread 140378367420096: wunlocking, signalling writers!: nr=0, nrw=4, nww=1
+prw thread 140378367420096: wunlocking, signalling writers!: nr=0, nrw=4, nww=1
+prw thread 140378367420096: wunlocking, signalling writers!: nr=0, nrw=4, nww=1
+prw thread 140378367420096: rlock blocked!: nr=0, nrw=5, nww=1
+prw thread 140378350634688: wlock signaled!: nr=0, nrw=5, nww=1
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wlock blocked!: nr=1, nrw=4, nww=1
+prw thread 140378333849280: last reader!: nrw=4 nww=1, liberando somente writer!
+prw thread 140378333849280: wunlocking, signalling writers!: nr=0, nrw=4, nww=1
+prw thread 140378224809664: rlock blocked!: nr=0, nrw=4, nww=1
+prw thread 140378333849280: rlock blocked!: nr=0, nrw=5, nww=1
+prw thread 140378367420096: rlock blocked!: nr=0, nrw=5, nww=1
+prw thread 140378342241984: rlock blocked!: nr=0, nrw=5, nww=1
+prw thread 140378359027392: rlock blocked!: nr=0, nrw=5, nww=1
+prw thread 140378350634688: wlock signaled!: nr=0, nrw=5, nww=1
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wlock blocked!: nr=2, nrw=3, nww=1
+prw thread 140378333849280: last reader!: nrw=3 nww=1, liberando somente writer!
+prw thread 140378333849280: wunlocking, signalling writers!: nr=0, nrw=3, nww=1
+prw thread 140378224809664: rlock blocked!: nr=0, nrw=3, nww=1
+prw thread 140378342241984: rlock blocked!: nr=0, nrw=3, nww=1
+prw thread 140378350634688: wlock signaled!: nr=0, nrw=3, nww=1
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378350634688: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378342241984: wlock blocked!: nr=1, nrw=2, nww=1
+prw thread 140378333849280: wlock blocked!: nr=1, nrw=2, nww=2
+prw thread 140378224809664: rlock blocked!: nr=1, nrw=2, nww=2
+prw thread 140378367420096: rlock blocked!: nr=1, nrw=3, nww=2
+prw thread 140378350634688: last reader!: nrw=3 nww=2, liberando somente writer!
+prw thread 140378350634688: wunlocking, signalling writers!: nr=0, nrw=3, nww=2
+prw thread 140378350634688: wunlocking, signalling writers!: nr=0, nrw=3, nww=2
+prw thread 140378350634688: wunlocking, signalling writers!: nr=0, nrw=3, nww=2
+prw thread 140378350634688: rlock blocked!: nr=0, nrw=4, nww=2
+prw thread 140378359027392: rlock blocked!: nr=0, nrw=4, nww=2
+prw thread 140378333849280: wlock signaled!: nr=0, nrw=4, nww=2
+prw thread 140378333849280: wunlocking, signalling writers!: nr=0, nrw=4, nww=1
+prw thread 140378333849280: rlock blocked!: nr=0, nrw=5, nww=1
+prw thread 140378342241984: wlock signaled!: nr=0, nrw=5, nww=1
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378350634688: wlock blocked!: nr=2, nrw=1, nww=1
+prw thread 140378342241984: rlock blocked!: nr=1, nrw=2, nww=1
+prw thread 140378359027392: wlock blocked!: nr=1, nrw=2, nww=2
+prw thread 140378224809664: rlock blocked!: nr=1, nrw=2, nww=2
+prw thread 140378367420096: rlock blocked!: nr=1, nrw=3, nww=2
+prw thread 140378333849280: last reader!: nrw=3 nww=2, liberando somente writer!
+prw thread 140378333849280: wunlocking, signalling writers!: nr=0, nrw=3, nww=2
+prw thread 140378333849280: wunlocking, signalling writers!: nr=0, nrw=3, nww=2
+prw thread 140378333849280: rlock blocked!: nr=0, nrw=4, nww=2
+prw thread 140378350634688: wlock signaled!: nr=0, nrw=4, nww=2
+prw thread 140378350634688: wunlocking, signalling writers!: nr=0, nrw=4, nww=1
+prw thread 140378350634688: wunlocking, signalling writers!: nr=0, nrw=4, nww=1
+prw thread 140378350634688: wunlocking, signalling writers!: nr=0, nrw=4, nww=1
+prw thread 140378350634688: rlock blocked!: nr=0, nrw=5, nww=1
+prw thread 140378359027392: wlock signaled!: nr=0, nrw=5, nww=1
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=5, nww=0
+Thread 2: in=20 out=13 read=31
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378333849280: wlock blocked!: nr=1, nrw=1, nww=1
+prw thread 140378367420096: last reader!: nrw=1 nww=1, liberando somente writer!
+prw thread 140378367420096: rlock blocked!: nr=0, nrw=2, nww=1
+prw thread 140378350634688: rlock blocked!: nr=0, nrw=3, nww=1
+prw thread 140378359027392: wunlocking, signalling writers!: nr=0, nrw=3, nww=1
+prw thread 140378359027392: rlock blocked!: nr=0, nrw=4, nww=1
+prw thread 140378333849280: wlock signaled!: nr=0, nrw=4, nww=1
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=4, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=4, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=4, nww=0
+prw thread 140378333849280: wlock blocked!: nr=1, nrw=3, nww=1
+prw thread 140378342241984: last reader!: nrw=3 nww=1, liberando somente writer!
+prw thread 140378342241984: wunlocking, signalling writers!: nr=0, nrw=3, nww=1
+prw thread 140378342241984: rlock blocked!: nr=0, nrw=4, nww=1
+prw thread 140378359027392: rlock blocked!: nr=0, nrw=4, nww=1
+prw thread 140378333849280: wlock signaled!: nr=0, nrw=4, nww=1
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=4, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=4, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=4, nww=0
+prw thread 140378333849280: wlock blocked!: nr=2, nrw=2, nww=1
+prw thread 140378359027392: last reader!: nrw=2 nww=1, liberando somente writer!
+prw thread 140378359027392: wunlocking, signalling writers!: nr=0, nrw=2, nww=1
+prw thread 140378359027392: rlock blocked!: nr=0, nrw=3, nww=1
+prw thread 140378367420096: wunlocking, signalling writers!: nr=0, nrw=3, nww=1
+prw thread 140378333849280: wlock signaled!: nr=0, nrw=3, nww=1
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378333849280: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+Thread 6: in=15 out=16 read=33
+prw thread 140378359027392: wlock blocked!: nr=2, nrw=0, nww=1
+prw thread 140378350634688: rlock blocked!: nr=1, nrw=1, nww=1
+prw thread 140378367420096: rlock blocked!: nr=1, nrw=2, nww=1
+prw thread 140378342241984: last reader!: nrw=2 nww=1, liberando somente writer!
+prw thread 140378342241984: rlock blocked!: nr=0, nrw=3, nww=1
+prw thread 140378359027392: wlock signaled!: nr=0, nrw=3, nww=1
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wlock blocked!: nr=1, nrw=2, nww=1
+prw thread 140378350634688: last reader!: nrw=2 nww=1, liberando somente writer!
+prw thread 140378350634688: rlock blocked!: nr=0, nrw=3, nww=1
+prw thread 140378367420096: rlock blocked!: nr=0, nrw=3, nww=1
+prw thread 140378359027392: wlock signaled!: nr=0, nrw=3, nww=1
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
+prw thread 140378359027392: wlock blocked!: nr=2, nrw=1, nww=1
+prw thread 140378342241984: wlock blocked!: nr=1, nrw=1, nww=2
+prw thread 140378350634688: last reader!: nrw=1 nww=2, liberando somente writer!
+prw thread 140378350634688: wunlocking, signalling writers!: nr=0, nrw=1, nww=2
+Thread 4: in=13 out=18 read=33
+prw thread 140378367420096: rlock blocked!: nr=0, nrw=1, nww=2
+prw thread 140378342241984: wlock signaled!: nr=0, nrw=1, nww=2
+prw thread 140378342241984: wunlocking, signalling writers!: nr=0, nrw=1, nww=1
+prw thread 140378342241984: rlock blocked!: nr=0, nrw=2, nww=1
+prw thread 140378359027392: wlock signaled!: nr=0, nrw=2, nww=1
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+prw thread 140378359027392: wunlocking, signalling readers!: nr=0, nrw=2, nww=0
+Thread 3: in=18 out=17 read=29
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+prw thread 140378342241984: wunlocking, signalling readers!: nr=0, nrw=1, nww=0
+Thread 5: in=16 out=15 read=33
+Thread 1: in=28 out=8 read=29
+Tempo: 0.001848
+prw: destruindo rwlock 0x55ab2dc95100
