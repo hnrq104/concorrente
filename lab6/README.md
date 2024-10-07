@@ -16,6 +16,7 @@ Para compilar o programa com/sem logging basta comentar/descomentar o define em 
 
 Um exemplo que prova que nossa prioridade está funcionando pode ser visto aqui (trocarei os nomes das threads para facilitar):
 
+```console
 1   prw thread 6: wlock blocked!: nr=1, nrw=1, nww=3
 2   prw thread 2: last reader!: nrw=1 nww=3, liberando somente writer!
 3   prw thread 0: rlock blocked!: nr=0, nrw=1, nww=3
@@ -29,7 +30,8 @@ Um exemplo que prova que nossa prioridade está funcionando pode ser visto aqui 
 11  prw thread 6: rlock blocked!: nr=0, nrw=3, nww=1
 12  prw thread 8: wlock signaled!: nr=0, nrw=3, nww=1
 13  prw thread 8: wunlocking, signalling readers!: nr=0, nrw=3, nww=0
-
+```
+```
 Na linha 1, a thread 6 se adiciona a `number_writers_waiting` e se bloqueia, pois há um leitor.
 Na linha 2, o leitor (thread 2) percebe que era o último na estrutura, havia 1 leitor e 3 escritores esperando, ele libera um escritor.
 Na linha 3, o leitor (thread 0) é ativado novamente (por um sinal anterior), mas percebe que há escritores esperando e se bloqueia novamente
@@ -41,6 +43,6 @@ na linha 9 e 10, ela termina, pega sequencialmente o lock para escrita, e termin
 na linha 11, a thread 6 se bloqueia para uma escrita.
 na linha 12, a thread 8 - que estava esperando para escrever, adquire o lock
 na linha 13 ela termina e sinaliza todos os leitores para se desbloquearem.
-
+```
 
 Outro bom exemplo pode ser visto em output.txt (tive que rodar tantas vezes para dar esse azar!)
