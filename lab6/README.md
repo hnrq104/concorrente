@@ -12,7 +12,7 @@ Decisões:
 
     Alterei para que seja 50% escrita, 50% leitura.
 
-Para compilar o programa com/sem logging basta comentar/descomentar o define em `priority_rw.c`.
+Para compilar o programa com/sem logging basta comentar/descomentar o `#define LOGGING 1` em `priority_rw.c` e escrever `make` no terminal.
 
 Um exemplo que prova que nossa prioridade está funcionando pode ser visto aqui (trocarei os nomes das threads para facilitar):
 
