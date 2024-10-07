@@ -1,4 +1,4 @@
-# Laboratório 2
+# Laboratório 6
 
 Disciplina: Computacao Concorrente
 Professora: Silvana Rossetto
