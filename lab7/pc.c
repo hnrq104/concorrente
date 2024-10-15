@@ -3,25 +3,7 @@
 #include <semaphore.h>
 #include "pc.h"
 
-/**
-//pc serve para produtor consumidor!
-typedef struct{
-    int tam_buffer;
-    char* buffer;
-    int in; //thread consumidora pega daqui!
-    int out; //thread produtora produz aqui!
-    
-    //se fosse com void*, deveria enviar o sizeof(type)
-    //ou enviar uma funcao para void
-    //tam tipo_elem
-
-    //produtor preenche tudo e retira depois
-    sem_t sem_produtor;
-    sem_t sem_consumidor;
-}pc_t;
-*/
-
-//FAZER COM CHUNKS DEPOIS!
+//Fiz da maneira mais bobinha possível, para ficar bem fácil de ler, não é de forma alguma otimizado!
 
 void pc_init(pc_t* pc, int tam_buffer, char* buffer){
     pc->tam_buffer = tam_buffer;

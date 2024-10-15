@@ -17,7 +17,6 @@ pc_t pc2;
 
 void *t1(void* arq_v){ //ptr para arquivo 
     FILE* arq = (FILE*) arq_v; // já foi aberto pela main
-    //primeiro de maneira bobona! letra por letra
     char ch;
     do {
         ch = fgetc(arq);
@@ -66,7 +65,7 @@ int main(int argc, char* argv[]){
     pthread_t tids[3];
     FILE *arq = fopen(argv[2],"r");
     if(arq == NULL){
-        printf("erro: nao foi possivel abrir %s\n",argv[1]);
+        printf("erro: nao foi possivel abrir %s\n",argv[2]);
         exit(1);
     }
 
